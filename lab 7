@@ -1,0 +1,22 @@
+# assign the cpu data to a
+# vector called t
+#this process works for tiny data sets
+#but for large data sets we need to read
+#from the file system
+
+t<- c(55,56,98,100,15,12,33,45,32,76,82,19,25)
+
+#write the plot window
+# to a png file
+png("idle.png")
+
+plot(t, type="l", xlab="timestamp", ylab="%IDLE", main="CPU idle Data")
+
+#turn off window capture
+dev.off()
+
+summary(t)
+
+plot(100 -t, type="l", xlab="timestamp", ylab="%IDLE", main="CPU Busy Data")
+
+#read.table to read in a large file of cpu stats
